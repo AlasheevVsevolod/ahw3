@@ -16,6 +16,29 @@ namespace Advanced_Lesson_3_Static_Interface
         /// </summary>
         public static void AL3_P1_3()
         {
+            Random rand = new Random();
+            for (int i = 0; i < rand.Next(10); i++)
+            {
+                var newClass = new UniqueItem();
+                Console.WriteLine(UniqueItem.id);
+            }
+        }
+
+        class UniqueItem
+        {
+            public static int id { get; private set; }
+            public string name;
+
+            static UniqueItem()
+            {
+                id = 1000;
+            }
+
+            public UniqueItem()
+            {
+                id++;
+
+            }
         }
 
         /// <summary>
